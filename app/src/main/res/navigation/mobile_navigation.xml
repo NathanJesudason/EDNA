@@ -3,23 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_monitoring">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.edna.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_documentation"
+        android:name="com.example.edna.ui.documentation.DocumentationFragment"
+        android:label="@string/title_documentation"
+        tools:layout="@layout/fragment_documentation" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.edna.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_monitoring"
+        android:name="com.example.edna.ui.monitoring.MonitoringFragment"
+        android:label="@string/title_monitoring"
+        tools:layout="@layout/fragment_monitoring" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.edna.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_tasks"
+        android:name="com.example.edna.ui.tasks.TasksFragment"
+        android:label="@string/title_tasks"
+        tools:layout="@layout/fragment_tasks" />
+
+    <fragment
+        android:id="@+id/navigation_utilities"
+        android:name="com.example.edna.ui.utilities.UtilitiesFragment"
+        android:label="@string/title_utilities"
+        tools:layout="@layout/fragment_utilities" />
 </navigation>
