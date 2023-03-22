@@ -1,6 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/email_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="45dp"
+                    android:layout_marginBottom="75dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="@string/contact_email"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="152dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="152dp"
+                    android:text="Need more help?"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="32dp"
+                    android:text="Trouble Shooting"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="365dp"
+                        android:layout_height="184dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+                        card_view:cardCornerRadius="4dp"
+                        card_view:layout_constraintEnd_toEndOf="parent"
+                        card_view:layout_constraintStart_toStartOf="parent"
+                        card_view:layout_constraintTop_toTopOf="parent">
+
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="321dp"
+                            android:layout_height="107dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="48dp"
+                            android:text="If the sampler doesn’t work on start up and seems to freeze (lights aren’t blinking, UI can’t be connected to), then it is possible that this problem is occurring. The easiest way to resolve this issue is to remove all files from the SD card and then put on new files." />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="80dp"
+                            android:layout_marginBottom="32dp"
+                            android:text="SD Card Corruption" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="365dp"
+                        android:layout_height="200dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="200dp"
+                        android:layout_marginEnd="24dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        card_view:cardCornerRadius="4dp">
+
+
+                        <TextView
+                            android:id="@+id/redirect_text"
+                            android:layout_width="319dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="48dp"
+                            android:text="By default, Firefox attempts to connect websites using the HTTPS protocol, which is not supported by the eDNA sampler. Go to about:config (same as entering any web address), then search for network.stricttransportsecurity.preloadlist and make it set to false. Then, search for browser.fixup.fallback-to-https and set to false as well." />
+
+                        <TextView
+                            android:id="@+id/redirect_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="80dp"
+                            android:layout_marginBottom="32dp"
+                            android:text=" UI redirecting to https (Firefox)" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="365dp"
+                        android:layout_height="200dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="420dp"
+                        android:layout_marginEnd="24dp"
+                        card_view:cardCornerRadius="4dp"
+                        card_view:layout_constraintEnd_toEndOf="parent"
+                        card_view:layout_constraintStart_toStartOf="parent"
+                        card_view:layout_constraintTop_toTopOf="parent">
+
+
+                        <TextView
+                            android:id="@+id/clean_text"
+                            android:layout_width="319dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="48dp"
+                            android:text="Under utilities, there is an option called “hyperflush”. With all connections put into a bleach container, run hyperflush 3 times. Then, put the intake into a water source and the other connections into a sink or disposal system. Run hyperflush again at least 3 times." />
+
+                        <TextView
+                            android:id="@+id/clean_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="80dp"
+                            android:layout_marginBottom="32dp"
+                            android:text="System Needs Cleaning" />
+                    </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
