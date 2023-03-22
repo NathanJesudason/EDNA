@@ -4,6 +4,7 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
@@ -39,7 +40,7 @@ class MonitoringFragment : Fragment(R.layout.fragment_monitoring) {
 
 
         val beeper = Runnable { viewModel.loadSearchResults() }
-        future = scheduler.scheduleAtFixedRate(beeper, 5, 1, TimeUnit.SECONDS)
+        future = scheduler.scheduleAtFixedRate(beeper, 5, 2, TimeUnit.SECONDS)
 
 
         //view.findViewById<Button>(R.id.button).setBackgroundColor(Color.RED)
@@ -56,12 +57,17 @@ class MonitoringFragment : Fragment(R.layout.fragment_monitoring) {
 
             if(status != null) {
                 status?.utc?.let {
-                    Log.d("Status", it.toString())
 
                     view!!.findViewById<TextView>(R.id.UTC_TV).text =
                         Instant.ofEpochSecond(it.toLong()).atZone(ZoneId.systemDefault()).toLocalDateTime()
                             .toString()
 
+                }
+
+                if(status.lowBattery){
+                    view.findViewById<ImageView>(R.id.Battery_IV).setImageResource(R.drawable.battery_alert)
+                } else {
+                    view.findViewById<ImageView>(R.id.Battery_IV).setImageResource(R.drawable.battery_full)
                 }
 
                 statusAdapter.updateStatus(status.valves as MutableList<Int>)

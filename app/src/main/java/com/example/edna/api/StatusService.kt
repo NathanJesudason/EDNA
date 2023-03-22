@@ -17,11 +17,11 @@ interface StatusService {
     suspend fun getStatus() : Response<Status>
 
     companion object {
-        private val proxy = Proxy(Proxy.Type.HTTP, InetSocketAddress("192.168.1.1", 80))
+        /*private val proxy = Proxy(Proxy.Type.HTTP, InetSocketAddress("192.168.1.1", 80))
         private val okHttpClient: OkHttpClient? = OkHttpClient.Builder()
             .proxy(proxy)
             .connectTimeout(20, TimeUnit.SECONDS)
-            .build()
+            .build()*/
         private const val BASE_URL = "http://192.168.1.1/"
         fun create() : StatusService {
             return Retrofit.Builder()
