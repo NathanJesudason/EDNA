@@ -39,8 +39,10 @@
         android:layout_marginStart="180dp"
         android:layout_marginEnd="183dp"
         android:layout_marginBottom="322dp"
+        android:foregroundTint="#FFFFFF"
         android:src="@drawable/battery_alert"
         android:text="TextView"
+        android:tint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/Status_RV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -106,5 +108,17 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/State_TV" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="177dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginBottom="8dp"
+        android:text="Valve Statuses"
+        app:layout_constraintBottom_toTopOf="@+id/Status_RV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

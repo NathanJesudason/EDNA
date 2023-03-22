@@ -59,8 +59,8 @@ class MonitoringFragment : Fragment(R.layout.fragment_monitoring) {
                 status?.utc?.let {
 
                     view!!.findViewById<TextView>(R.id.UTC_TV).text =
-                        Instant.ofEpochSecond(it.toLong()).atZone(ZoneId.systemDefault()).toLocalDateTime()
-                            .toString()
+                        "Current Time: ${Instant.ofEpochSecond(it.toLong()).atZone(ZoneId.systemDefault()).toLocalDateTime()
+                            .toString()}"
 
                 }
 
@@ -85,10 +85,21 @@ class MonitoringFragment : Fragment(R.layout.fragment_monitoring) {
     }
 
     override fun onDestroyView() {
-        Log.d("Monitor", "Deleting")
         future.cancel(true)
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onPause() {
+        super.onPause()
+        future.cancel(true)
+    }
+
+    override fun onResume() {
+        super.onResume()
+       // val beeper = Runnable { viewModel.loadSearchResults() }
+       // future = scheduler.scheduleAtFixedRate(beeper, 5, 2, TimeUnit.SECONDS)
+
     }
 
 }

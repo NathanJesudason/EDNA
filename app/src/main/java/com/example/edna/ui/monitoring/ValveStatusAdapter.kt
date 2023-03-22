@@ -40,13 +40,13 @@ class ValveStatusAdapter : RecyclerView.Adapter<ValveStatusAdapter.ViewHolder>()
         fun bind(valveStatus: Int, valve: Int){
             currentStatus = when (valveStatus) {
                 1 -> {
-                    "${valve.toString()}: Free"
+                    "Valve ${valve.toString()}: Free"
                 }
                 0 -> {
-                    "${valve.toString()}: Sampled"
+                    "Valve ${valve.toString()}: Sampled"
                 }
                 else -> {
-                    "${valve.toString()}: Unavailable"
+                    "Valve ${valve.toString()}: Unavailable"
                 }
             }
             valveTV.text = currentStatus
