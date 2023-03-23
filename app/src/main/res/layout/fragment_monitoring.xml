@@ -11,8 +11,7 @@
         android:id="@+id/UTC_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="133dp"
+        android:layout_marginStart="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_monitoring" />
 
@@ -39,13 +38,24 @@
         android:layout_marginStart="180dp"
         android:layout_marginEnd="183dp"
         android:layout_marginBottom="322dp"
-        android:foregroundTint="#FFFFFF"
-        android:src="@drawable/battery_alert"
+        android:src="@drawable/ic_warning"
         android:text="TextView"
-        android:tint="#FFFFFF"
+        app:tint="?android:attr/textColorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/Status_RV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:text="Check sampler status and wifi if status does not load"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Battery_IV" />
 
     <TextView
         android:id="@+id/Temperature_TV"
@@ -92,10 +102,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="189dp"
         android:text="Pressure"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UTC_TV" />
+        app:layout_constraintTop_toBottomOf="@+id/text_monitoring" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Status_RV"

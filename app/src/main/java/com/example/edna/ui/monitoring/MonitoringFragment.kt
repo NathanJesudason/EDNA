@@ -9,12 +9,14 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.edna.R
 import com.example.edna.databinding.FragmentMonitoringBinding
 import java.time.Instant
 import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 import java.util.*
 import java.util.concurrent.Executors
 import java.util.concurrent.Future
@@ -31,10 +33,15 @@ class MonitoringFragment : Fragment(R.layout.fragment_monitoring) {
 
     private val scheduler = Executors.newSingleThreadScheduledExecutor()
 
+    private var timeFormat = "12 Hours"
+
+    var hour12Formatter = DateTimeFormatter.ofPattern("hh:mm:ss dd/MM/yyyy")
+    var hour24Formatter = DateTimeFormatter.ofPattern("kk:mm:ss dd/MM/yyyy")
+
     private lateinit var valveStatusRV: RecyclerView
     private lateinit var future: Future<*>
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -55,12 +62,21 @@ class MonitoringFragment : Fragment(R.layout.fragment_monitoring) {
 
         viewModel.statusResults.observe(this) { status ->
 
-            if(status != null) {
-                status?.utc?.let {
 
-                    view!!.findViewById<TextView>(R.id.UTC_TV).text =
-                        "Current Time: ${Instant.ofEpochSecond(it.toLong()).atZone(ZoneId.systemDefault()).toLocalDateTime()
-                            .toString()}"
+
+            if(status != null) {
+                view.findViewById<TextView>(R.id.text_warning).visibility = View.INVISIBLE
+                status?.utc?.let {
+                    if(timeFormat == "12 Hours"){
+                        view!!.findViewById<TextView>(R.id.UTC_TV).text =
+                            "Current Time: ${Instant.ofEpochSecond(it.toLong()).atZone(ZoneId.systemDefault()).toLocalDateTime().format(hour12Formatter)
+                                .toString()}"
+                    } else if (timeFormat == "24 Hours") {
+                        view!!.findViewById<TextView>(R.id.UTC_TV).text =
+                            "Current Time: ${Instant.ofEpochSecond(it.toLong()).atZone(ZoneId.systemDefault()).toLocalDateTime().format(hour24Formatter)
+                                .toString()}"
+                    }
+
 
                 }
 
@@ -97,6 +113,8 @@ class MonitoringFragment : Fragment(R.layout.fragment_monitoring) {
 
     override fun onResume() {
         super.onResume()
+        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        timeFormat = sharedPrefs.getString(getString(R.string.pref_units_key), "12 Hours").toString()
        // val beeper = Runnable { viewModel.loadSearchResults() }
        // future = scheduler.scheduleAtFixedRate(beeper, 5, 2, TimeUnit.SECONDS)
 
