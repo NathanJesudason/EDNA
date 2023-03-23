@@ -11,4 +11,19 @@
     <string name="pref_units_title">Time Formatting</string>
     <string name="pref_units_default_value" />
     <string name="action_settings_title">Settings</string>
+    <string name="warning_text">Loading...</string>
+    <string name="need_more_help">Need more help?</string>
+    <string name="trouble_shooting">Trouble Shooting</string>
+    <string name="SD_card_corruption_fix">If the sampler doesn’t work on start up and seems to freeze (lights aren’t blinking, UI can’t be connected to), then it is possible that this problem is occurring. The easiest way to resolve this issue is to remove all files from the SD card and then put on new files.</string>
+    <string name="sd_card_corruption_title">SD Card Corruption</string>
+    <string name="ui_redirect_title">UI redirecting to https (Firefox)</string>
+    <string name="ui_redirect_solution">By default, Firefox attempts to connect websites using the HTTPS protocol, which is not supported by the eDNA sampler. Go to about:config (same as entering any web address), then search for network.stricttransportsecurity.preloadlist and make it set to false. Then, search for browser.fixup.fallback-to-https and set to false as well.</string>
+    <string name="system_needs_cleaning_title">System Needs Cleaning</string>
+    <string name="system_needs_cleaning_solution">Under utilities, there is an option called “hyperflush”. With all connections put into a bleach container, run hyperflush 3 times. Then, put the intake into a water source and the other connections into a sink or disposal system. Run hyperflush again at least 3 times.</string>
+    <string name="valve_statuses_header">Valve Statuses</string>
+    <string name="pressure_def">Pressure</string>
+    <string name="state_def">State</string>
+    <string name="volume_def">Volume</string>
+    <string name="flow_def">Flow</string>
+    <string name="temperature_def">Temperature</string>
 </resources>

@@ -39,7 +39,6 @@
         android:layout_marginEnd="183dp"
         android:layout_marginBottom="322dp"
         android:src="@drawable/ic_warning"
-        android:text="TextView"
         app:tint="?android:attr/textColorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/Status_RV"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +51,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:text="Check sampler status and wifi if status does not load"
+        android:text="@string/warning_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Battery_IV" />
@@ -63,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
         android:layout_marginTop="16dp"
-        android:text="Temperature"
+        android:text="@string/temperature_def"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Pressure_TV" />
 
@@ -73,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
         android:layout_marginTop="16dp"
-        android:text="Flow"
+        android:text="@string/flow_def"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Temperature_TV" />
 
@@ -83,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
         android:layout_marginTop="16dp"
-        android:text="Volume"
+        android:text="@string/volume_def"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Flow_TV" />
 
@@ -93,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
         android:layout_marginTop="16dp"
-        android:text="State"
+        android:text="@string/state_def"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Volume_TV" />
 
@@ -103,7 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
         android:layout_marginTop="189dp"
-        android:text="Pressure"
+        android:text="@string/pressure_def"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_monitoring" />
 
@@ -126,7 +125,7 @@
         android:layout_marginStart="177dp"
         android:layout_marginEnd="176dp"
         android:layout_marginBottom="8dp"
-        android:text="Valve Statuses"
+        android:text="@string/valve_statuses_header"
         app:layout_constraintBottom_toTopOf="@+id/Status_RV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
