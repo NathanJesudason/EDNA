@@ -9,6 +9,8 @@ import kotlinx.coroutines.launch
 
 class TasksViewModel : ViewModel() {
     private val repository = TaskRepository(TaskService.create())
+
+    private val _status = MutableLiveData<List<Tasks>>(null)
     /*private var _tasks: MutableList<Tasks> = mutableListOf()
 
         private val temp = listOf<Int>(8, 9, 10)
@@ -62,6 +64,14 @@ class TasksViewModel : ViewModel() {
     }
 
     val text: LiveData<String> = _text
+
+    fun loadSearchResults() {
+        viewModelScope.launch {
+            val result = repository.loadStatus()
+
+            _status.value = result.getOrNull()
+        }
+    }
 
 
 }

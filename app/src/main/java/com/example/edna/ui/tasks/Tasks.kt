@@ -21,5 +21,4 @@ data class Tasks(
     val valvesOffset: Int,
     val deleteOnCompletion: Boolean,
     val valves: List<Int>
-
-)
+) : java.io.Serializable

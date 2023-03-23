@@ -11,10 +11,11 @@ import kotlinx.coroutines.withContext
 
 class TaskRepository(private val service: TaskService, private val dispatcher: CoroutineDispatcher = Dispatchers.IO) {
 
-    suspend fun loadStatus(): Result<Tasks> = withContext(dispatcher){
+    suspend fun loadStatus(): Result<List<Tasks>> = withContext(dispatcher){
         try {
             val response = service.getStatus()
             if(response.isSuccessful) {
+                Log.d("StatusRepo", "Success")
                 Result.success(response.body()!!)
             } else {
                 response.errorBody()?.string()?.let { Log.d("StatusRepo", it) }
