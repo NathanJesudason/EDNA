@@ -1,15 +1,16 @@
 package com.example.edna.api
 
 import android.util.Log
-import com.example.edna.data.HyperflushResponse
+import com.example.edna.data.UtilitiesResponse
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import okhttp3.internal.Util
 
 class HyperflushRepository(private val service: HyperflushInterface, private val dispatcher: CoroutineDispatcher = Dispatchers.IO) {
 
 
-    suspend fun doHyperflush(): Result<HyperflushResponse> = withContext(dispatcher){
+    suspend fun doHyperflush(): Result<UtilitiesResponse> = withContext(dispatcher){
         try {
             val response = service.getHyperflush()
             if(response.isSuccessful) {
@@ -24,9 +25,9 @@ class HyperflushRepository(private val service: HyperflushInterface, private val
         }
     }
 
-    suspend fun doValveReset(): Result<HyperflushResponse> = withContext(dispatcher){
+    suspend fun doValveReset(): Result<UtilitiesResponse> = withContext(dispatcher){
         try {
-            val response = service.getHyperflush()
+            val response = service.getResetValves()
             if(response.isSuccessful) {
                 Result.success(response.body()!!)
             } else {
@@ -39,9 +40,9 @@ class HyperflushRepository(private val service: HyperflushInterface, private val
         }
     }
 
-    suspend fun doBubblePurge(): Result<HyperflushResponse> = withContext(dispatcher){
+    suspend fun doBubblePurge(): Result<UtilitiesResponse> = withContext(dispatcher){
         try {
-            val response = service.getHyperflush()
+            val response = service.getBubblePurge()
             if(response.isSuccessful) {
                 Result.success(response.body()!!)
             } else {
@@ -54,9 +55,9 @@ class HyperflushRepository(private val service: HyperflushInterface, private val
         }
     }
 
-    suspend fun doRTCUpdate(): Result<HyperflushResponse> = withContext(dispatcher){
+    suspend fun doRTCUpdate(): Result<UtilitiesResponse> = withContext(dispatcher){
         try {
-            val response = service.getHyperflush()
+            val response = service.getUpdateRTC()
             if(response.isSuccessful) {
                 Result.success(response.body()!!)
             } else {
