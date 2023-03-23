@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit
 
 interface TaskService {
 
-    @GET("api/taasks")
+    @GET("api/tasks")
     suspend fun getStatus() : Response<Tasks>
 
     companion object {
