@@ -1,12 +1,9 @@
 package com.example.edna.ui.monitoring
 
-import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.preference.PreferenceManager
@@ -17,7 +14,6 @@ import com.example.edna.databinding.FragmentMonitoringBinding
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
-import java.util.*
 import java.util.concurrent.Executors
 import java.util.concurrent.Future
 import java.util.concurrent.TimeUnit
@@ -40,18 +36,18 @@ class MonitoringFragment : Fragment(R.layout.fragment_monitoring) {
 
     private lateinit var valveStatusRV: RecyclerView
     private lateinit var future: Future<*>
+    private lateinit var cancelTask: Future<*>
+
+    private val canceler = Runnable {future.cancel(true)}
+    private val statusGetter = Runnable {viewModel.loadSearchResults() }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        future = scheduler.scheduleAtFixedRate(statusGetter, 1, 2, TimeUnit.SECONDS)
 
-        val beeper = Runnable { viewModel.loadSearchResults() }
-        future = scheduler.scheduleAtFixedRate(beeper, 5, 2, TimeUnit.SECONDS)
-
-
-        //view.findViewById<Button>(R.id.button).setBackgroundColor(Color.RED)
-        //view.findViewById<Button>(R.id.button).text = "3"
+        cancelTask = scheduler.schedule(canceler, 10, TimeUnit.SECONDS)
 
         valveStatusRV = view.findViewById(R.id.Status_RV)
         valveStatusRV.layoutManager = LinearLayoutManager(requireContext())
@@ -62,9 +58,9 @@ class MonitoringFragment : Fragment(R.layout.fragment_monitoring) {
 
         viewModel.statusResults.observe(this) { status ->
 
-
-
             if(status != null) {
+
+                cancelTask.cancel(true)
                 view.findViewById<TextView>(R.id.text_warning).visibility = View.INVISIBLE
                 status?.utc?.let {
                     if(timeFormat == "12 Hours"){
@@ -76,7 +72,6 @@ class MonitoringFragment : Fragment(R.layout.fragment_monitoring) {
                             "Current Time: ${Instant.ofEpochSecond(it.toLong()).atZone(ZoneId.systemDefault()).toLocalDateTime().format(hour24Formatter)
                                 .toString()}"
                     }
-
 
                 }
 
@@ -115,8 +110,6 @@ class MonitoringFragment : Fragment(R.layout.fragment_monitoring) {
         super.onResume()
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         timeFormat = sharedPrefs.getString(getString(R.string.pref_units_key), "12 Hours").toString()
-       // val beeper = Runnable { viewModel.loadSearchResults() }
-       // future = scheduler.scheduleAtFixedRate(beeper, 5, 2, TimeUnit.SECONDS)
 
     }
 

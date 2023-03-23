@@ -14,11 +14,6 @@ import java.util.concurrent.TimeUnit
 class MonitoringViewModel : ViewModel() {
     private val repository = StatusRepository(StatusService.create())
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is monitoring Fragment"
-    }
-    val text: LiveData<String> = _text
-
     private val _status = MutableLiveData<Status>(null)
 
     val statusResults: LiveData<Status> = _status
