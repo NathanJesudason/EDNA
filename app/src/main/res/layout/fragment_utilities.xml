@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.utilities.UtilitiesFragment">
+    tools:context=".ui.utilities.UtilitiesFragment"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/hyperflush_button"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Hyperflush" />
 
     <TextView
-        android:id="@+id/text_utilities"
+        android:id="@+id/hyperflush_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -18,5 +25,99 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Perform a hyperflush on the device"
+        android:layout_marginBottom="50dp"
+        />
+
+
+    <Button
+        android:id="@+id/rtc_button"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Update RTC" />
+
+    <TextView
+        android:id="@+id/update_rtc_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Tell the device to perform an RTC update"
+        android:layout_marginBottom="50dp"
+        />
+
+
+
+    <Button
+        android:id="@+id/valves_button"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Reset Valves" />
+
+    <TextView
+        android:id="@+id/reset_valves_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Reset all valves on the device"
+        android:layout_marginBottom="50dp"
+        />
+
+
+
+
+
+    <Button
+        android:id="@+id/bubble_button"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Bubble Purge" />
+
+    <TextView
+        android:id="@+id/bubble_purge_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Use the alcohol debubbler to perform a bubble purge on the device"
+        />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
