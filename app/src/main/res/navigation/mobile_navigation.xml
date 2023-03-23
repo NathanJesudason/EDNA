@@ -21,7 +21,18 @@
         android:id="@+id/navigation_tasks"
         android:name="com.example.edna.ui.tasks.TasksFragment"
         android:label="@string/title_tasks"
-        tools:layout="@layout/fragment_tasks" />
+        tools:layout="@layout/fragment_tasks">
+        <action
+            android:id="@+id/navigation_to_add_task"
+            app:destination="@id/add_task"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/add_task"
+        android:name="com.example.edna.ui.tasks.AddTaskFragment"
+        android:label="@string/title_add_tasks"
+        tools:layout="@layout/fragment_add_task" />
 
     <fragment
         android:id="@+id/navigation_utilities"

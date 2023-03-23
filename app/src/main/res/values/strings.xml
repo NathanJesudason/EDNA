@@ -2,6 +2,7 @@
     <string name="app_name">EDNA</string>
     <string name="title_monitoring">Monitoring</string>
     <string name="title_tasks">Tasks</string>
+    <string name="title_add_tasks">Add Tasks</string>
     <string name="title_utilities">Utilities</string>
     <string name="title_documentation">Documentation</string>
 </resources>

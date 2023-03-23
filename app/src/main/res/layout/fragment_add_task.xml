@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.tasks.AddTaskFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_task_name_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="Task Name:">
+
+        </TextView>
+
+            <EditText
+                android:id="@+id/task_name_input"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/title_task_note_textbox"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Task Notes:">
+
+        </TextView>
+        <EditText
+            android:id="@+id/task_notes_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="15sp"/>
+
+
+        <TextView
+            android:id="@+id/title_status_textbox"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Status:">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/status_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="15sp"/>
+
+
+        <TextView
+            android:id="@+id/title_schedule_textbox"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Schedule at:">
+
+        </TextView>
+        <EditText
+            android:id="@+id/schedule_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/title_flush_time_textbox"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Flush Time:">
+
+        </TextView>
+        <EditText
+            android:id="@+id/flush_time_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/title_flush_volume_textbox"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Flush Volume:">
+
+        </TextView>
+        <EditText
+            android:id="@+id/flush_volume_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="15sp"/>
+
+
+        <TextView
+            android:id="@+id/title_sample_time_textbox"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Sample Time:">
+
+        </TextView>
+        <EditText
+            android:id="@+id/sample_time_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/title_sample_pressure_textbox"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Sample Pressure:">
+
+        </TextView>
+        <EditText
+            android:id="@+id/sample_pressure_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/title_volume_textbox"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Sample Volume:">
+
+        </TextView>
+        <EditText
+            android:id="@+id/sample_volume_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/title_preserve_time_textbox"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Preserve Time:">
+
+        </TextView>
+        <EditText
+            android:id="@+id/preserve_time_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/title_time_between_textbox"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Time Between:">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/time_between_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/title_valves_offset_textbox"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Valves Offset:">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/valves_offset_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/title_delete_on_completion_textbox"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Delete on Completion:">
+
+        </TextView>
+        <EditText
+            android:id="@+id/delete_on_completion_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/title_valves_textbox"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Valves:">
+
+        </TextView>
+        <EditText
+            android:id="@+id/valves_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/btn_submit_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:paddingBottom="60dp"/>
+    </LinearLayout>
+
+</ScrollView>
